@@ -27,19 +27,19 @@
 
 
 <http://www.opengis.net/def/geosparql/funcsrules> 
-    skos:definition "Un vocabulaire (taxonomie) des fonctions et des règles définies dans la spécification GeoSPARQL 1.1 "@fr ;
-    skos:prefLabel "Registre des fonctions et règles GeoSPARQL "@fr .
+    skos:definition "Un vocabulaire (taxonomie) des fonctions et des règles définies dans la spécification GeoSPARQL 1.1"@fr ;
+    skos:prefLabel "Registre des fonctions et règles GeoSPARQL"@fr .
 
 funcs: a skos:Collection ;
-    skos:definition """Toutes les fonctions GeoSPARQL définies dans la spécification GeoSPARQL 1.1 """@fr ;
+    skos:definition """Toutes les fonctions GeoSPARQL définies dans la spécification GeoSPARQL 1.1"""@fr ;
     skos:prefLabel "Fonctions GeoSPARQL"@fr .
 
 funcs:eh a skos:Collection ;
-    skos:definition """Toutes les fonctions topologiques Egenhofer définies dans la spécification GeoSPARQL 1.1 """@fr ;
+    skos:definition """Toutes les fonctions topologiques Egenhofer définies dans la spécification GeoSPARQL 1.1"""@fr ;
     skos:prefLabel "Fonctions Topologiques GeoSPARQL Egenhofer"@fr .
 
 funcs:rcc a skos:Collection ;
-    skos:definition """Toutes les fonctions topologiques RCC8 définies dans la spécification GeoSPARQL 1.1 """@fr ;
+    skos:definition """Toutes les fonctions topologiques RCC8 définies dans la spécification GeoSPARQL 1.1"""@fr ;
     skos:prefLabel "Fonctions Topologiques GeoSPARQL RCC8"@fr .
 
 funcs:sf a skos:Collection ;
@@ -70,8 +70,8 @@ rules:rcc a skos:Collection ;
     skos:prefLabel "Règles Topologiques RCC8 GeoSPARQL"@fr .
 
 rules:sf a skos:Collection ;
-    skos:definition """Toutes les règles topologiques simple GeoSPARQL définies dans la spécification GeoSPARQL 1.1"""@fr ;
-    skos:prefLabel "Règles Topologiques Simple GeoSPARQL" .
+    skos:definition """Toutes les règles topologiques simples GeoSPARQL définies dans la spécification GeoSPARQL 1.1"""@fr ;
+    skos:prefLabel "Règles Topologiques Simples GeoSPARQL" .
 
 funcs:area a skos:Concept ;
     skos:definition "Renvoie l'aire d'une géométrie en mètres carrés."@fr ;
@@ -86,7 +86,7 @@ funcs:asGeoJSON a skos:Concept ;
     skos:prefLabel "comme GeoJSON"@fr .
 		
 funcs:asGML a skos:Concept ;
-    skos:definition "Convertit une géométrie donnée en une représentation GML équivalente définie par une version gmlProfile en préservant le système de référence de coordonnées. "@fr ;
+    skos:definition "Convertit une géométrie donnée en une représentation GML équivalente définie par une version gmlProfile en préservant le système de référence de coordonnées."@fr ;
     skos:prefLabel "comme GML"@fr .
 	
 funcs:asKML a skos:Concept ;
@@ -110,7 +110,7 @@ funcs:buffer a skos:Concept ;
     skos:prefLabel "tampon"@fr .
 
 funcs:centroid a skos:Concept ;
-    skos:definition "Fonction d'agrégation spatiale qui calcule le centroïde d'un ensemble de géométries."@fr ;
+    skos:definition "Une fonction d'agrégation spatiale qui calcule le centroïde d'un ensemble de géométries."@fr ;
     skos:prefLabel "centroïde"@fr .
 
 funcs:concatLines a skos:Concept ;
@@ -118,7 +118,7 @@ funcs:concatLines a skos:Concept ;
     skos:prefLabel "lignes concaténée"@fr .
 
 funcs:concaveHull a skos:Concept ;
-    skos:definition "Fonction d'agrégation spatiale qui calcule l'enveloppe concave d'un ensemble de géométries."@fr ;
+    skos:definition "Une fonction d'agrégation spatiale qui calcule l'enveloppe concave d'un ensemble de géométries."@fr ;
     skos:prefLabel "enveloppe concave"@fr .
 
 funcs:convexHull a skos:Concept ;
@@ -150,40 +150,35 @@ DE-9IM: T*TFT*FF*"""@fr ;
 
 funcs:ehDisjoint a skos:Concept ;
     skos:definition """Une fonction de requête qui retourne true si les géométries sont disjointes. 
-
 DE-9IM: FF*FF****"""@fr ;
     skos:prefLabel "disjoint"@fr .
 
 funcs:ehEquals a skos:Concept ;
     skos:definition """Une fonction de requête qui retourne true si les géométries sont égales.
-
 DE-9IM: TFFFTFFFT"""@fr ;
     skos:prefLabel "égal"@fr .
 
 funcs:ehInside a skos:Concept ;
     skos:definition """Une fonction de requête qui retourne true si la première géométrie est spatialement à l'intérieur de la seconde. 
-
 DE-9IM: TFF*FFT**"""@fr ;
     skos:prefLabel "à l'intérieur de"@fr .
 
 funcs:ehMeet a skos:Concept ;
     skos:definition """Une fonction de requête qui retourne true si les deux géométries se rencontrent.
-
 DE-9IM: FT******* ^ F**T***** ^ F***T****"""@fr ;
     skos:prefLabel "rencontre"@fr .
 
 funcs:ehOverlap a skos:Concept ;
     skos:definition """Une fonction de requête qui retourne true si les deux géométries se chevauchent. 
-
 DE-9IM: T*T***T**"""@fr ;
     skos:prefLabel "chevauche"@fr .
 
 funcs:envelope a skos:Concept ;
-    skos:definition "Une fonction de requête qui renvoie l'enveloppe minimum de la géométrie d'entrée "@fr ;
+    skos:definition "Une fonction de requête qui renvoie l'enveloppe minimum de la géométrie d'entrée."@fr ;
     skos:prefLabel "enveloppe"@fr .
 
 funcs:geometryN a skos:Concept ;
-    skos:definition "Une fonction de requête qui renvoie la géométrie a la position n dans  une sf:GeometryCollection."@fr ;
+    skos:definition "Une fonction de requête qui renvoie la géométrie à la position n dans une sf:GeometryCollection."@fr ;
     skos:prefLabel "geometryN"@fr .
 
 funcs:getSRID a skos:Concept ;
@@ -205,7 +200,6 @@ funcs:dimension a skos:Concept ;
 funcs:length a skos:Concept ;
     skos:definition "Renvoie la longueur d'une géométrie en mètres."@fr ;
     skos:prefLabel "longueur"@fr .
-
 
 funcs:minx a skos:Concept ;
     skos:definition "Une fonction de requête qui renvoie la coordonnée minimale x de la géométrie d'entrée."@fr ;
@@ -247,101 +241,85 @@ funcs:intersection a skos:Concept ;
 
 funcs:rcc8dc a skos:Concept ;
     skos:definition """Une fonction de requête qui retourne true si les géométries sont disjointes.
-
 DE-9IM: FFTFFTTTT"""@fr ;
     skos:prefLabel "déconnecté"@fr .
 
 funcs:rcc8ec a skos:Concept ;
     skos:definition """Une fonction de requête qui retourne true si les deux géométries se rencontrent.
-
 DE-9IM: FFTFTTTTT"""@fr ;
     skos:prefLabel "connecté externellement"@fr .
 
 funcs:rcc8eq a skos:Concept ;
     skos:definition """Une fonction de requête qui retourne true si les géométries sont égales.
-
 DE-9IM: TFFFTFFFT"""@fr ;
     skos:prefLabel "égal"@fr .
 
 funcs:rcc8ntpp a skos:Concept ;
     skos:definition """Une fonction de requête qui retourne true si la première géométrie est spatialement à l'intérieur de la seconde.
-
 DE-9IM: TFFTFFTTT"""@fr ;
     skos:prefLabel "partie propre non tangentielle"@fr .
 
 funcs:rcc8ntppi a skos:Concept ;
     skos:definition """Une fonction de requête qui renvoie true si le premier argument de géométrie contient spatialement le deuxième argument de géométrie.
-
 DE-9IM: TTTFFTFFT"""@fr ;
     skos:prefLabel "partie propre inverse non tangentielle"@fr .
 
 funcs:rcc8po a skos:Concept ;
     skos:definition """Une fonction de requête qui retourne true si les deux géométries se chevauchent.
-
 DE-9IM: TTTTTTTTT"""@fr ;
     skos:prefLabel "chevauche partiellement"@fr .
 
 funcs:rcc8tpp a skos:Concept ;
     skos:definition """Une fonction de requête qui renvoie true si le premier argument de géométrie est couvert spatialement par le deuxième argument de géométrie.
-
 DE-9IM: TFFTTFTTT"""@fr ;
     skos:prefLabel "partie propre tangentielle"@fr .
 
 funcs:rcc8tppi a skos:Concept ;
     skos:definition """Une fonction de requête qui renvoie true si le premier argument de géométrie couvre spatialement le deuxième argument de géométrie.
-
 DE-9IM: TTTFTTFFT"""@fr ;
     skos:prefLabel "partie propre inverse tangentielle "@fr .
 
 funcs:relate a skos:Concept ;
-    skos:definition "Une fonction de requête qui retourne true si la relation spatiale entre les deux géométries  correspond à une avec des valeurs acceptables dans la matrice DE-9IM spécifiée."@fr ;
+    skos:definition "Une fonction de requête qui retourne true si la relation spatiale entre les deux géométries correspond à une des valeurs acceptables dans la matrice DE-9IM spécifiée."@fr ;
     skos:prefLabel "lier à"@fr .
 
 funcs:sfContains a skos:Concept ;
     skos:definition """Une fonction de requête qui renvoie true si le premier argument de géométrie contient spatialement le deuxième argument de géométrie. 
-
 DE-9IM: T*****FF*"""@fr ;
     skos:prefLabel "contient"@fr .
 
 funcs:sfCrosses a skos:Concept ;
     skos:definition """Une fonction de requête qui retourne true si la première géométrie traverse spatialement la seconde.
-
 DE-9IM: T*T***T**"""@fr ;
     skos:prefLabel "croise"@fr .
 
 funcs:sfDisjoint a skos:Concept ;
-    skos:definition """Une fonction de requête qui retourne true si les géométries sont disjointes.
-      
+    skos:definition """Une fonction de requête qui retourne true si les géométries sont disjointes.      
 DE-9IM: FF*FF****"""@fr ;
     skos:prefLabel "disjoint"@fr .
 
 funcs:sfEquals a skos:Concept ;
     skos:definition """Une fonction de requête qui retourne true si les géométries sont égales.
-
 DE-9IM: TFFFTFFFT"""@fr ;
     skos:prefLabel "égal"@fr .
 
 funcs:sfIntersects a skos:Concept ;
     skos:definition """Une fonction de requête qui retourne true si les géométries d'entrée se croisent.
-
 DE-9IM: T******** ^ *T******* ^ ***T***** ^ ****T**** """@fr ;
     skos:prefLabel "intersecte"@fr .
 
 funcs:sfOverlaps a skos:Concept ;
     skos:definition """Une fonction de requête qui retourne true si les deux géométries se chevauchent.
-
 DE-9IM: T*T***T** """@fr ;
     skos:prefLabel "chevauche"@fr .
 
 funcs:sfTouches a skos:Concept ;
     skos:definition """Une fonction de requête qui retourne true si les géométries d'entrée touchent.
-
 DE-9IM: FT******* ^ F**T***** ^ F***T****"""@fr ;
     skos:prefLabel "touches"@fr .
 
 funcs:sfWithin a skos:Concept ;
     skos:definition """Une fonction de requête qui retourne true si la première géométrie est spatialement à l'intérieur de la seconde.
-
 DE-9IM: T*F**F***"""@fr ;
     skos:prefLabel "à l'intérieur de"@fr .
 
@@ -398,7 +376,7 @@ rules:rcc8dc a skos:Concept ;
     skos:prefLabel "dis-connecté"@fr .
 
 rules:rcc8ec a skos:Concept ;
-    skos:definition "Règle de réécriture de requête utilisée pour déterminer si deux objets spatiaux sont connectés de manière externe en fonction de leurs objets de géométrie primaire associés."@fr ;
+    skos:definition "Une règle de réécriture de requête utilisée pour déterminer si deux objets spatiaux sont connectés de manière externe en fonction de leurs objets de géométrie primaire associés."@fr ;
     skos:prefLabel "connecté externellement"@fr .
 
 rules:rcc8eq a skos:Concept ;

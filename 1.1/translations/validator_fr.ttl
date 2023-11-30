@@ -72,10 +72,10 @@ Pour GeoSPARQL 1.1, ce validateur n'est pas normatif, mais informatif. Il sera l
                 ) 
         ] ;
         sh:minCount 1 ;
-	sh:message "Chaque noeud avec un geo:hasGeometry, ou une spécialisation de, devrait avoir au minimum une relation sortante geo:hasSerialization ou une spécialisation de celle-ci."@fr ;
+	sh:message "Chaque noeud avec un prédicat geo:hasGeometry, ou une spécialisation de, devrait avoir au minimum une relation sortante geo:hasSerialization ou une spécialisation de celle-ci."@fr ;
 	skos:example 
 		"""
-                # Exemple valide: Entrant dans le noeud de géométrie est geo:hasGeometry avec geo:asWKT en sortant.
+                # Exemple valide: l'entrée dans le noeud de géométrie est geo:hasGeometry avec geo:asWKT en sortie.
 		@prefix geo: <http://www.opengis.net/ont/geosparql#> .
 
 		<feature-x>
@@ -85,7 +85,7 @@ Pour GeoSPARQL 1.1, ce validateur n'est pas normatif, mais informatif. Il sera l
 		.
 		""" ,
 		"""
-		# Un exemple non valide: entrant dans le noeud de géométrie est geo:hasGeometry, mais il n'y a pas de geo:hasSerialization sortant ou une
+		# Un exemple non valide: l'entrée dans le noeud de géométrie est geo:hasGeometry, mais il n'y a pas de geo:hasSerialization en sortie ou une
 		# de ses spécialisations
 		@prefix geo: <http://www.opengis.net/ont/geosparql#> .
 
@@ -94,8 +94,7 @@ Pour GeoSPARQL 1.1, ce validateur n'est pas normatif, mais informatif. Il sera l
 		.
 		"""@fr ,
 		"""
-                # Un exemple valide: entrant dans le noeud de géométrie vierge est geo:hasDefaultGeometry avec geo:asWKT comme
-                # sortie.
+        # Un exemple valide: l'entrée dans le noeud vierge de géométrie est geo:hasDefaultGeometry avec geo:asWKT en sortie.
 		@prefix geo: <http://www.opengis.net/ont/geosparql#> .
 
 		<feature-x>
@@ -105,8 +104,8 @@ Pour GeoSPARQL 1.1, ce validateur n'est pas normatif, mais informatif. Il sera l
 		.
 		"""@fr ,
 		"""
-		# Un exemple non valide: le noeud de géométrie est geo:hasDefaultGeometry mais sans geo:hasSerialization sortant ou spécialisation de celui-ci 
-    @prefix geo: <http://www.opengis.net/ont/geosparql#> .
+		# Un exemple non valide: le noeud de géométrie est geo:hasDefaultGeometry mais sans geo:hasSerialization en sortie ou spécialisation de celle-ci 
+    	@prefix geo: <http://www.opengis.net/ont/geosparql#> .
 
 		<feature-x>
 			geo:hasDefaultGeometry [] ;
@@ -118,10 +117,10 @@ Pour GeoSPARQL 1.1, ce validateur n'est pas normatif, mais informatif. Il sera l
 	a sh:PropertyShape ;
 	sh:path geo:asWKT ;
 	sh:maxCount 1 ;
-	sh:message "Chaque noeud avec un instance geo:hasGeometry, ou une spécialisation de celui-ci, peut avoir un maximum de une relation geo:asWKT."@fr ;
+	sh:message "Chaque noeud avec un prédicat geo:hasGeometry, ou une spécialisation de celui-ci, peut avoir un maximum d'une relation geo:asWKT."@fr ;
 	skos:example 
 		"""
-		# Un exemple valide: L'entrée dans le neoud de géométrie geo:hasGeometry et sortant est une relation geo:asWKT.
+		# Un exemple valide: l'entrée dans le neoud de géométrie est geo:hasGeometry et la sortie est une unique relation geo:asWKT.
 		@prefix geo: <http://www.opengis.net/ont/geosparql#> .
 
 		<feature-x>
@@ -131,7 +130,7 @@ Pour GeoSPARQL 1.1, ce validateur n'est pas normatif, mais informatif. Il sera l
 		.
 		"""@fr ,
 		"""
-		# Un exemple valide:  L'entrée dans le neoud de géométrie vierge est geo:hasGeometry, sortant est une relation geo:asWKT. RDF traite les deux inscriptions comme un triple car ils sont identiques. 
+		# Un exemple valide: l'entrée dans le noeud vierge de géométrie est geo:hasGeometry, quand bien même la sortie compte deux relations geo:asWKT, RDF traite les deux comme un unique triplet car ils sont identiques. 
 		@prefix geo: <http://www.opengis.net/ont/geosparql#> .
 
 		<feature-x>
@@ -142,8 +141,7 @@ Pour GeoSPARQL 1.1, ce validateur n'est pas normatif, mais informatif. Il sera l
 		.
 		"""@fr ,
 		"""
-		# Un exemple non valide: l'entrant dans le neoud de géométrie vierge est geo:hasGeometry avec deux relations
-		# geo:asWKT.
+		# Un exemple non valide: l'entrée dans le noeud vierge de géométrie est geo:hasGeometry avec deux relations geo:asWKT différentes en sortie.
 		@prefix geo: <http://www.opengis.net/ont/geosparql#> .
 
 		<feature-x>
@@ -159,21 +157,21 @@ Pour GeoSPARQL 1.1, ce validateur n'est pas normatif, mais informatif. Il sera l
 	a sh:PropertyShape ;
 	sh:path geo:asGML ;
 	sh:maxCount 1 ;
-	sh:message "Chaque neoud avec un geo:hasGeometry entrante, ou une spécialisation de celui-ci, peut avoir un maximum d'une relation asGML."@fr ;
+	sh:message "Chaque noeud avec un prédicat geo:hasGeometry, ou une spécialisation de celui-ci, peut avoir un maximum d'une relation geo:asGML."@fr ;
 .
 
 <S1-d-hasGeometry-hasSerialization-sub>
 	a sh:PropertyShape ;
 	sh:path geo:asGeoJSON ;
 	sh:maxCount 1 ;
-	sh:message "Chaque neoud avec un geo:hasGeometry entrante, ou une spécialisation de celui-ci, peut avoir un maximum d'une relation geo:asGeoJSON."@fr ;
+	sh:message "Chaque noeud avec un prédicat geo:hasGeometry, ou une spécialisation de celui-ci, peut avoir un maximum d'une relation geo:asGeoJSON."@fr ;
 .
 
 <S1-e-hasGeometry-hasSerialization-sub>
 	a sh:PropertyShape ;
 	sh:path geo:asKML ;
 	sh:maxCount 1 ;
-	sh:message "Chaque neoud avec un geo:hasGeometry entrante, ou une spécialisation de celui-ci, peut avoir un maximum d'une relation geo:asKML."@fr ;
+	sh:message "Chaque noeud avec un prédicat geo:hasGeometry, ou une spécialisation de celui-ci, peut avoir un maximum d'une relation geo:asKML."@fr ;
 .
 
 #################################################
@@ -182,10 +180,10 @@ Pour GeoSPARQL 1.1, ce validateur n'est pas normatif, mais informatif. Il sera l
 
 <S3-hasGeometry-hasGeometry-sub>
 	sh:maxCount 0 ;
-	sh:message "Un noeud qui a une propriété geo:hasGeometry entrante, ou une spécialisation de celui-ci, ne peut posséder une propriété geo:hasGeometry, ou une spécialisation de celle-ci, en même temps (un noeud geo:Feature ne peut être à la fois un noeud geo:Geometry )."@fr ;
+	sh:message "Un noeud qui a une propriété geo:hasGeometry en entrée, ou une spécialisation de celle-ci, ne peut posséder qu'une propriété geo:hasGeometry, ou une spécialisation de celle-ci, en même temps (un noeud geo:Feature ne peut être à la fois un noeud geo:Geometry )."@fr ;
 	skos:example 
 		"""
-		# Un exemple valide: l'instance de ressource <ressource-x-geom1> a une propriété entrante geo:hasGeometry et aucune propriété geo:hasGeometry ou spécialisation de celui-ci.
+		# Un exemple valide: l'instance de ressource <ressource-x-geom1> a une propriété entrante geo:hasGeometry et aucune propriété geo:hasGeometry ou spécialisation de celle-ci.
 		@prefix geo: <http://www.opengis.net/ont/geosparql#> .
 
 		<resource-x> geo:hasGeometry <resource-x-geom1> .
@@ -206,14 +204,14 @@ Pour GeoSPARQL 1.1, ce validateur n'est pas normatif, mais informatif. Il sera l
 		.		
 		"""@fr ,
 		"""
-		# Exemple valide: l'instance de ressource <Resource-X-Geom1> a une propriété entrante geo:hasDefaultGeometry et aucune propriété geo:hasDefaultGeometry (ou ses spécialisations)
+		# Exemple valide: l'instance de ressource <resource-x-geom1> a une propriété entrante geo:hasDefaultGeometry et aucune propriété geo:hasDefaultGeometry (ou ses spécialisations)
 		@prefix geo: <http://www.opengis.net/ont/geosparql#> .
 
 		<resource-x> geo:hasDefaultGeometry <resource-x-geom1> .
 		<resource-x-geom1> geo:asWKT "POINT (153.084230 -27.322738)"^^geo:wktLiteral .
 		"""@fr ,
 		"""
-		# Un exemple non valide: l'instance de ressource <ressource-x> a une propriété de geo:hasDefaultGeometry entrante et une propriété de geo:hasDefaultGeometry sortante (c'est-à-dire une noeud geo:Feature et geo:Geometry) 
+		# Un exemple non valide: l'instance de ressource <ressource-x> a une propriété entrante geo:hasDefaultGeometry et une propriété sortante geo:hasDefaultGeometry (c'est-à-dire une noeud geo:Feature et geo:Geometry) 
 		@prefix geo: <http://www.opengis.net/ont/geosparql#> .
 
 		<resource-y>
@@ -287,7 +285,7 @@ Pour GeoSPARQL 1.1, ce validateur n'est pas normatif, mais informatif. Il sera l
 		.
 		"""@fr ,
 		"""
-		# Un exemple invalide: la cible d'une propriété geo:asWKT est un littéral RDF sans type geo:wktLiteral 
+		# Un exemple invalide: la cible d'une propriété geo:asWKT est une ressource RDF sans type geo:wktLiteral 
 		@prefix geo: <http://www.opengis.net/ont/geosparql#> .
 
 		<feature-y>
@@ -319,7 +317,7 @@ Pour GeoSPARQL 1.1, ce validateur n'est pas normatif, mais informatif. Il sera l
 	a sh:NodeShape ;
 	sh:targetObjectsOf geo:asGeoJSON ;
 	sh:datatype geo:geoJSONLiteral ;
-	sh:message "La cible d'une propriété geo:asGeoJSON devrait être un littéral RDF avec type geo:geoJSONliteral."@fr ;
+	sh:message "La cible d'une propriété geo:asGeoJSON devrait être un littéral RDF avec type geo:geoJSONLiteral."@fr ;
 .
 
 <S8-asKML-kmlLiteral>
@@ -380,7 +378,7 @@ Pour GeoSPARQL 1.1, ce validateur n'est pas normatif, mais informatif. Il sera l
 	a sh:PropertyShape ;
 	sh:path geo:dimension ;
 	sh:maxCount 1 ;
-	sh:message "Un geo:Geometry doit avoir au maximum une propriété geo:dimension. "@fr ;
+	sh:message "Un geo:Geometry doit avoir au maximum une propriété geo:dimension."@fr ;
 .	
 
 <S11-many-isEmpty-one>
@@ -503,7 +501,7 @@ Pour GeoSPARQL 1.1, ce validateur n'est pas normatif, mais informatif. Il sera l
 		.
 		"""@fr ,
 		"""
-		#Un exemple non valide: le littéral RDF d'un geo:asWKT n'a pas de chaîne WKT bien formée comme contenu, mais plutôt une chaîne de Geojson 
+		#Un exemple non valide: le littéral RDF d'un geo:asWKT n'a pas de chaîne WKT bien formée comme contenu, mais une chaîne de GeoJSON 
 		@prefix geo: <http://www.opengis.net/ont/geosparql#> .
 
 		<feature-x>
@@ -537,7 +535,7 @@ Pour GeoSPARQL 1.1, ce validateur n'est pas normatif, mais informatif. Il sera l
 	a sh:PropertyShape ;
 	sh:path geo:asGeoJSON ;
 	sh:pattern "^\\s*$|^\\s*({)(.*)(})\\s*$" ;  # starts with { ends with }
-	sh:message "Le contenu d'un littéral RDF avec une relation entrante geo:asGeoJSON doit être conforme à une chaîne de géométrie geojson bien formée, telle que définie par sa spécification officielle."@fr ;
+	sh:message "Le contenu d'un littéral RDF avec une relation entrante geo:asGeoJSON doit être conforme à une chaîne de géométrie GeoJSON bien formée, telle que définie par sa spécification officielle."@fr ;
 .
 
 <S18-kml-content>
@@ -580,7 +578,7 @@ Pour GeoSPARQL 1.1, ce validateur n'est pas normatif, mais informatif. Il sera l
 	] ;
 	skos:example 
 		"""
-		# Un exemple valide: geo:dimension a la valeur est 2 tandis que le geo:coordinateDimension a une valeur 2 
+		# Un exemple valide: geo:dimension a pour valeur 2 tandis que le geo:coordinateDimension a pour valeur 2 
 		@prefix geo: <http://www.opengis.net/ont/geosparql#> .
 
 		<feature-x> geo:hasGeometry <feature-x-geom1> .
@@ -597,7 +595,7 @@ Pour GeoSPARQL 1.1, ce validateur n'est pas normatif, mais informatif. Il sera l
 		.
 		"""@fr ,
 		"""
-		# Un exemple non valide: la valeur de geo:dimension est 3 tandis que geo:coordinateDimension a une valeur 2 
+		# Un exemple non valide: la valeur de geo:dimension est 3 tandis que geo:coordinateDimension a pour valeur 2 
 		@prefix geo: <http://www.opengis.net/ont/geosparql#> .
 
 		<feature-x> geo:hasGeometry <feature-x-geom1> .
@@ -625,7 +623,7 @@ Pour GeoSPARQL 1.1, ce validateur n'est pas normatif, mais informatif. Il sera l
 	sh:message "Une instance de Geo:FeatureCollection devrait avoir au moins une relation rdfs:member."@fr ;
 	skos:example 
 		"""
-		# Un exemple valide: Le noeud geo:FeatureCollection  possède une relation rdfs:member 
+		# Un exemple valide: Le noeud geo:FeatureCollection possède une relation rdfs:member 
 		@prefix geo: <http://www.opengis.net/ont/geosparql#> .
 		@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
@@ -652,7 +650,7 @@ Pour GeoSPARQL 1.1, ce validateur n'est pas normatif, mais informatif. Il sera l
 	a sh:PropertyShape ;
 	sh:path rdfs:member ;
 	sh:sparql [
-		sh:message "Une instance de geo:FeatureCollection ne doit avoir que des rdfs:member sortant qui n'ont que de geo:Feature."@fr ;
+		sh:message "Une instance de geo:FeatureCollection ne doit avoir que des rdfs:member sortants vers des instances de geo:Feature."@fr ;
 		sh:select """
 			PREFIX geo: <http://www.opengis.net/ont/geosparql#>
 			PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -667,7 +665,7 @@ Pour GeoSPARQL 1.1, ce validateur n'est pas normatif, mais informatif. Il sera l
 	] ;
 	skos:example 
 		"""
-		# Un exemple valide: le noeud geo:FeatureCollection a un rdfs:membre qui pointe a un noeud geo:Feature 
+		# Un exemple valide: le noeud geo:FeatureCollection a un rdfs:member qui pointe sur un noeud geo:Feature 
 		@prefix geo: <http://www.opengis.net/ont/geosparql#> .
 		@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
@@ -682,7 +680,7 @@ Pour GeoSPARQL 1.1, ce validateur n'est pas normatif, mais informatif. Il sera l
 		.
 		"""@fr ,
 		"""
-		# Un exemple non valide: Le noeud Geo:FeatureCollection possède un rdfs:membre de la relation avec un noeud geo:Feature et une autre geo:Geometry
+		# Un exemple invalide: le noeud Geo:FeatureCollection possède un rdfs:member vers un noeud geo:Feature et un autre vers un noeud geo:Geometry
 		@prefix geo: <http://www.opengis.net/ont/geosparql#> .
 		@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
@@ -714,7 +712,7 @@ Pour GeoSPARQL 1.1, ce validateur n'est pas normatif, mais informatif. Il sera l
 	sh:message "Une instance de geo:GeometryCollection doit avoir au moins une relation sortante rdfs:member."@fr ;
 	skos:example 
 		"""
-		#Exemple valide: Le noeud geo:GeometryCollection possède un rdfs:member
+		#Exemple valide: le noeud geo:GeometryCollection possède un rdfs:member
 		@prefix geo: <http://www.opengis.net/ont/geosparql#> .
 		@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
@@ -726,9 +724,8 @@ Pour GeoSPARQL 1.1, ce validateur n'est pas normatif, mais informatif. Il sera l
 		<feature-x> geo:hasGeometry <geometry-x> .
 		"""@fr ,
 		"""
-		# Exemple valide: Le noeud geo:GeometryCollection ne possède pas un rdfs:member
+		# Un exemple invalide: le noeud geo:GeometryCollection ne possède pas de rdfs:member
 		@prefix geo: <http://www.opengis.net/ont/geosparql#> .
-		@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 		<geometryCollection-x> a geo:GeometryCollection .
 		"""@fr ;
@@ -738,7 +735,7 @@ Pour GeoSPARQL 1.1, ce validateur n'est pas normatif, mais informatif. Il sera l
 	a sh:PropertyShape ;
 	sh:path rdfs:member ;
 	sh:sparql [
-		sh:message "Une instance de geo:GeometryCollection ne doit avoir que des relations rdfs:member sortante aux instances de geo:Geometry."@fr ;
+		sh:message "Une instance de geo:GeometryCollection ne doit avoir que des relations rdfs:member sortante vers des instances de geo:Geometry."@fr ;
 		sh:select """
 			PREFIX geo: <http://www.opengis.net/ont/geosparql#>
 			PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -753,7 +750,7 @@ Pour GeoSPARQL 1.1, ce validateur n'est pas normatif, mais informatif. Il sera l
 	] ;
 	skos:example 
 		"""
-		# Exemple valide: le noeud geo:GeometryCollection comporte un rdfs:membre sortant qui pointe à un noeud geo:Geometry 
+		# Exemple valide: le noeud geo:GeometryCollection comporte un rdfs:member sortant qui pointe vers un noeud geo:Geometry 
 		@prefix geo: <http://www.opengis.net/ont/geosparql#> .
 		@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
@@ -765,7 +762,7 @@ Pour GeoSPARQL 1.1, ce validateur n'est pas normatif, mais informatif. Il sera l
 		<feature-x> geo:hasGeometry <geometry-x> .
 		"""@fr ,
 		"""
-		# Un exemple non valide: le noeud d'instance geo:GeometryCollection comporte un rdfs:membre sortant qui pointe a un noeud geo:Geometry and un autre noeud qui n'est pas un geo:Geometry 
+		# Un exemple invalide: le noeud d'instance geo:GeometryCollection comporte un rdfs:member sortant qui pointe vers un noeud geo:Geometry et un autre noeud qui n'est pas un geo:Geometry 
 		@prefix geo: <http://www.opengis.net/ont/geosparql#> .
 		@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
@@ -807,7 +804,7 @@ Pour GeoSPARQL 1.1, ce validateur n'est pas normatif, mais informatif. Il sera l
 		<feature-x> geo:hasGeometry <geometry-x> .
 		"""@fr ,
 		"""
-		# Un exemple valide: Le noeud geo:SpatialObjectCollection n'a pas une relation sortante rdfs:member.
+		# Un exemple invalide: Le noeud geo:SpatialObjectCollection n'a pas de relation sortante rdfs:member.
 		@prefix geo: <http://www.opengis.net/ont/geosparql#> .
 		@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
@@ -821,7 +818,7 @@ Pour GeoSPARQL 1.1, ce validateur n'est pas normatif, mais informatif. Il sera l
 	a sh:PropertyShape ;
 	sh:path rdfs:member ;
 	sh:sparql [
-		sh:message "Une instance de geo:SpatialObjectCollection ne doit avoir que des relations sortante rdfs:member qui pointes à des instances geo:SpatialObject ou ses sous-classes."@fr ;
+		sh:message "Une instance de geo:SpatialObjectCollection ne doit avoir que des relations sortante rdfs:member qui pointent vers des instances de geo:SpatialObject ou ses sous-classes."@fr ;
 		sh:select """
 			PREFIX geo: <http://www.opengis.net/ont/geosparql#>
 			PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -836,7 +833,7 @@ Pour GeoSPARQL 1.1, ce validateur n'est pas normatif, mais informatif. Il sera l
 	] ;
 	skos:example 
 		"""
-		# Exemple valide: Le noeud geo:SpatialObjectCollection a des relations sortante rdfs:member qui pointes à des instances geo:SpatialObject
+		# Exemple valide: le noeud geo:SpatialObjectCollection a des relations sortantes rdfs:member qui pointent vers des instances de geo:SpatialObject
 		@prefix geo: <http://www.opengis.net/ont/geosparql#> .
 		@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
@@ -849,7 +846,7 @@ Pour GeoSPARQL 1.1, ce validateur n'est pas normatif, mais informatif. Il sera l
 		<feature-y> geo:hasGeometry <geometry-y> .
 		"""@fr ,
 		"""
-		# Un Exemple invalide: Le noeud geo:SpatialObjectCollection a des relations sortante rdfs:member qui pointes à des instances geo:Geometry, a une instance geo:Feature et une instance ex:Thing.
+		# Un exemple invalide: le noeud geo:SpatialObjectCollection a des relations sortantes rdfs:member qui pointent vers des instances de geo:Geometry, geo:Feature et ex:Thing.
 		@prefix ex: <http://example.com/> .
 		@prefix geo: <http://www.opengis.net/ont/geosparql#> .
 		@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
