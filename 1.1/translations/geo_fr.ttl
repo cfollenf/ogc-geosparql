@@ -243,12 +243,12 @@
 	
 :hasMetricSpatialResolution
 	skos:definition """La résolution spatiale d'une Géométrie en mètres."""@fr ;
-	skos:note """La résolution spatiale est applicable lorsqu'une Géométrie est utilisée pour représenter un objet géospatial. Elle est exprimée comme une distance qui indique la véracité des positions (coordonnées) qui définissent la Géométrie. Dans ce cas, la précision définit une zone entourant chaque coordonnée à l'intérieur de laquelle les positions réelles sont connues. La valeur de précision définit cette zone comme une distance à la ou aux coordonnées dans toutes les directions (par exemple, une ligne, un cercle ou une sphère, selon la dimension spatiale)."""@fr;
+	skos:note """La résolution spatiale est applicable lorsqu'une Géométrie est utilisée pour représenter un Objet Géospatial. Elle est exprimée comme une distance qui indique la véracité des positions (coordonnées) qui définissent la Géométrie. Dans ce cas, la précision définit une zone entourant chaque coordonnée à l'intérieur de laquelle les positions réelles sont connues. La valeur de précision définit cette zone comme une distance à la ou aux coordonnées dans toutes les directions (par exemple, une ligne, un cercle ou une sphère, selon la dimension spatiale)."""@fr;
 	skos:prefLabel "résolution spatiale en mètres"@fr .
 	
 :hasMetricSpatialAccuracy
-	skos:definition """La précision des positions de coordonnées d'une géométrie en mètres."""@fr ;
-	skos:note """La précision spatiale est applicable lorsqu'une géométrie est utilisée pour représenter une caractéristique géospatiale. Elle est exprimée comme une distance qui indique la véracité des coordonnées qui définissent la Géométrie. Dans ce cas, la précision définit une zone entourant chaque coordonnée à l'intérieur de laquelle les positions réelles sont connues. La valeur de précision définit cette zone comme une distance de la ou des coordonnées dans toutes les directions (par exemple, une ligne, un cercle ou une sphère, selon la dimension spatiale)."""@fr;
+	skos:definition """La précision des positions de coordonnées d'une Géométrie en mètres."""@fr ;
+	skos:note """La précision spatiale est applicable lorsqu'une Géométrie est utilisée pour représenter une Caractéristique Géospatiale. Elle est exprimée comme une distance qui indique la véracité des coordonnées qui définissent la Géométrie. Dans ce cas, la précision définit une zone entourant chaque coordonnée à l'intérieur de laquelle les positions réelles sont connues. La valeur de précision définit cette zone comme une distance de la ou des coordonnées dans toutes les directions (par exemple, une ligne, un cercle ou une sphère, selon la dimension spatiale)."""@fr;
 	skos:prefLabel "précision spatiale en mètres"@fr .
 	
 :hasMetricLength
@@ -273,28 +273,28 @@
 	
 :Feature
 	skos:definition """Un phénomène géospatial discret dans un univers de discours."""@fr ;
-	skos:note """Une caractéristique géospatiale représente un phénomène identifiable de manière unique, par exemple une rivière ou une pomme. Bien que de tels phénomènes (et donc les fonctionnalités utilisées pour les représenter) sont délimités, leurs frontières peuvent être nettes (par exemple, les frontières déclarées d'un État), vagues (par exemple, la délimitation d'une vallée par rapport aux montagnes voisines) et changer avec le temps (par exemple, un front de tempête). Bien que de nature discrète, les entités peuvent être créées à partir d'observations continues, telles qu'une isochrone qui détermine la région accessible en ambulance en 5 minutes."""@fr ;
-	skos:prefLabel "caractéristique géospatiale"@fr .
+	skos:note """Une Caractéristique Géospatiale représente un phénomène identifiable de manière unique, par exemple une rivière ou une pomme. Bien que de tels phénomènes (et donc les fonctionnalités utilisées pour les représenter) sont délimités, leurs frontières peuvent être nettes (par exemple, les frontières déclarées d'un État), vagues (par exemple, la délimitation d'une vallée par rapport aux montagnes voisines) et changer avec le temps (par exemple, un front de tempête). Bien que de nature discrète, les entités peuvent être créées à partir d'observations continues, telles qu'une isochrone qui détermine la région accessible en ambulance en 5 minutes."""@fr ;
+	skos:prefLabel "Caractéristique Géospatiale"@fr .
 	
 :FeatureCollection
-	skos:prefLabel "collection de caractéristiques géospatiales"@fr ;
-	skos:definition "Une collection quelconque de caractéristiques géospatiales."@fr .
+	skos:prefLabel "Collection de Caractéristiques Géospatiales"@fr ;
+	skos:definition "Une collection quelconque de Caractéristiques Géospatiales."@fr .
 	
 :Geometry
 	skos:definition """Un ensemble cohérent de positions dans l'espace euclidien. Une position directe contient les coordonnées d'une position dans un système de référence de coordonnées (CRS)."""@fr ;
-	skos:note """Une géométrie peut être utilisée comme représentation de la forme, de l'étendue ou de l'emplacement d'une entité, ou peut exister en tant qu'entité autonome."""@fr ;
-	skos:prefLabel "géométrie"@fr .
+	skos:note """Une Géométrie peut être utilisée comme représentation de la forme, de l'étendue ou de l'emplacement d'une entité, ou peut exister en tant qu'entité autonome."""@fr ;
+	skos:prefLabel "Géométrie"@fr .
 	
 :GeometryCollection
 	skos:definition "Une collection quelconque de géométries"@fr ;
-	skos:prefLabel "collection de géométries"@fr .
+	skos:prefLabel "Collection de Géométries"@fr .
 	
 :SpatialObject
 	skos:definition """Tout ce qui est spatial (ayant ou étant une forme, une position ou une étendue)."""@fr ;
 	skos:note """Les sous-classes devraient être utilisées pour les données d'instances."""@fr ;
-	skos:prefLabel "objet géospatial"@fr .
+	skos:prefLabel "Objet Géospatial"@fr .
 	
 
 :SpatialObjectCollection
-	skos:prefLabel "collection d'objets géospatiaux"@fr ;
-	skos:definition """Une collection quelconque d'objets géospatiaux"""@fr .
+	skos:prefLabel "Collection d'Objets Géospatiaux"@fr ;
+	skos:definition """Une collection quelconque d'Objets Géospatiaux"""@fr .
