@@ -48,12 +48,12 @@ sf:Envelope
 .
 
 sf:maximum
-  skos:definition "Point contenant les valeurs maximales des coordonnées d'une Enveloppe ou d'une boîte englobante"@fr ;
+  skos:definition "Point contenant les valeurs maximales des coordonnées d'une enveloppe ou d'une boîte englobante"@fr ;
   skos:prefLabel "maximum"@fr 
 .
 
 sf:minimum
-  skos:definition "Point contenant les valeurs minimales des coordonnées d'une Enveloppe ou d'une boîte englobante"@fr ;
+  skos:definition "Point contenant les valeurs minimales des coordonnées d'une enveloppe ou d'une boîte englobante"@fr ;
   skos:prefLabel "minimum"@fr 
 .
 
@@ -164,4 +164,4 @@ sf:TIN
 
 sf:Triangle 
     skos:prefLabel "Triangle"@fr ;
-    skos:definition """Un triangle est un sf:Polygone avec 3 sommets distincts non colinéaires et sans limite intérieure."""@fr .
+    skos:definition """Un Triangle est un sf:Polygone avec 3 sommets distincts non colinéaires et sans limite intérieure."""@fr .
